@@ -22,13 +22,13 @@ class ChatRoomConsumer(AsyncWebsocketConsumer):
         await self.channel_layer.group_send(
             self.group_name,
             {
-                "type": "chatroom_message",
+                "type": "chatbox_message",
                 "message": message,
                 "username": username,
             },
         )
 
-    async def chatroom_message(self, event):
+    async def chatbox_message(self, event):
         message = event["message"]
         username = event["username"]
 

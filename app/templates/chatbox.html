@@ -32,7 +32,7 @@
     </div>
 
     {{ request.user.username|json_script:"user_username" }}
-    {{ chat_box_name|json_script:"room-name" }}
+    {{ chat_box_name|json_script:"box-name" }}
     <script>
         const user_username = JSON.parse(document.getElementById('user_username').textContent);
         document.querySelector('#submit').onclick = function (e) {
@@ -48,20 +48,20 @@
 
 
 
-        const roomName = JSON.parse(document.getElementById('room-name').textContent);
+        const boxName = JSON.parse(document.getElementById('box-name').textContent);
 
         const chatSocket = new WebSocket(
             'ws://' +
             window.location.host +
             '/ws/chat/' +
-            roomName +
+            boxName +
             '/'
         );
 
         chatSocket.onmessage = function (e) {
             const data = JSON.parse(e.data);
             console.log(data)
-            document.querySelector('#chat-text').value += (data.message + ' sent by ' + data.username   + '\n')
+            document.querySelector('#chat-text').value += (data.message + ' sent by ' + data.username   + '\n') 
         }
     </script>
 
