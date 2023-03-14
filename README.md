@@ -1,12 +1,14 @@
-# django-channels-tutorial
-Basic setup of how to use Django channels to build a chat box application
+# django-channels-tutorial   
+Basic setup of how to use Django channels to build a chat box application.
+
+https://www.honeybadger.io/blog/django-channels-websockets-chat/
 
 
 #   comunication from server to client
 
-## group_name=chatbot
+- group_name=chatbot
 
-## channel_name = chatbot
+- channel_name = chatbot
 
 ```python
 from channels.layers import get_channel_layer
