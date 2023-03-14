@@ -2,9 +2,11 @@
 Basic setup of how to use Django channels to build a chat box application
 
 
-#comunication from server to client
-##group_name=chatbot
-##channel_name = chatbot
+#   comunication from server to client
+
+## group_name=chatbot
+
+## channel_name = chatbot
 
 ```python
 from channels.layers import get_channel_layer
@@ -15,7 +17,7 @@ def function(){
         'chatbox',
         {
             'type': 'chatbox_message',
-            'message': 'message'
+            'message': 'message to send'
 
         }
     )
